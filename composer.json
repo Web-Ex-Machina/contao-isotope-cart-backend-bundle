@@ -1,0 +1,40 @@
+{
+    "name": "webexmachina/contao-isotope-cart-backend-bundle",
+    "description": "See Isotope's cart in backend bundle for Contao Open Source CMS",
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "website" : "https://www.webexmachina.fr/",
+    "authors": [
+        {
+            "name": "Web ex Machina",
+            "homepage": "https://www.webexmachina.fr",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/Web-Ex-Machina/contao-isotope-cart-backend-bundle/issues",
+        "source":"https://github.com/Web-Ex-Machina/contao-isotope-cart-backend-bundle"
+    },
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.9",
+        "isotope/isotope-core": "^2.7"
+    },
+    "autoload":{
+        "psr-4": {
+            "IsotopeCartBackendBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    },
+    "extra":{
+        "contao-manager-plugin": "IsotopeCartBackendBundle\\ContaoManager\\Plugin"
+    }
+}

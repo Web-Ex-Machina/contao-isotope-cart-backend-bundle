@@ -1,0 +1,77 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/isotopecartbackend/languages/en/default.php" source-language="en" target-language="fr">
+    <body>
+      <trans-unit id="ICBE.LBL.sku">
+        <source>SKU</source>
+        <target>SKU</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.product">
+        <source>Product</source>
+        <target>Produit</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.quantity">
+        <source>Qty</source>
+        <target>Qté</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.priceGross">
+        <source>Price (gross)</source>
+        <target>Prix HT</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.priceNetto">
+        <source>Price (netto)</source>
+        <target>Prix TTC</target>
+      </trans-unit>
+      <trans-unit id="ICBE.BTN.showDetails">
+        <source>Show details</source>
+        <target>Voir le détails</target>
+      </trans-unit>
+      <trans-unit id="ICBE.BTN.hideDetails">
+        <source>Hide details</source>
+        <target>Cacher le détails</target>
+      </trans-unit>
+
+      <trans-unit id="ICBE.LBL.cartItems">
+        <source>Items in cart</source>
+        <target>Produit(s) dans le panier</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.checkoutInfo">
+        <source>Checkout informations</source>
+        <target>Récapitulatif</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartEmpty">
+        <source>Cart is empty</source>
+        <target>Le panier est vide</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.checkoutInfoNotAvailable">
+        <source>No checkout informations available</source>
+        <target>Pas d'informations disponibles</target>
+      </trans-unit>
+
+      <trans-unit id="ICBE.LBL.cartStep.websiteSurfing">
+        <source>Website surfing</source>
+        <target>Visite sur le site</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.paying">
+        <source>Paying</source>
+        <target>En cours paiement</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.checkoutInfo">
+        <source>Checkout info</source>
+        <target>Récapitulatif</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.paymentMethodSelection">
+        <source>Payment method selection</source>
+        <target>Sélection mode paiement</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.shipmentMethodSelection">
+        <source>Shipment method selection</source>
+        <target>Sélection mode livraison</target>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.addressFilling">
+        <source>Address filling</source>
+        <target>Renseignement addresse livraison &amp; paiement</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/cs02/xliff-core-1.2-strict.xsd">
+  <file datatype="plaintext" original="system/modules/isotope/languages/en/tl_iso_product_collection.xlf" source-language="en" target-language="fr">
+    <body>
+      <trans-unit id="tl_iso_product_collection.cart_last_action.0">
+        <source>Last action on</source>
+        <target>Dernière action le</target>
+      </trans-unit>
+      <trans-unit id="tl_iso_product_collection.cart_current_step.0">
+        <source>Current step</source>
+        <target>Etape</target>
+      </trans-unit>
+      <trans-unit id="tl_iso_product_collection.cart_actions.0">
+        <source></source>
+        <target></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

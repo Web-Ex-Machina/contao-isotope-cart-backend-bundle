@@ -1,0 +1,117 @@
+<div style="text-align: right;">
+	<a href="#" class="btn-show" data-id="<?php echo $this->cart_id; ?>" title="<?php echo $this->trans('ICBE.BTN.showDetails',[],'contao_default');?>">
+		 <?php echo Image::getHtml('visible.svg'); ?>
+	</a>
+	<a href="#" class="btn-hide hidden" data-id="<?php echo $this->cart_id; ?>" title="<?php echo $this->trans('ICBE.BTN.hideDetails',[],'contao_default');?>">
+		 <?php echo Image::getHtml('visible_.svg'); ?>
+	</a>
+</div>
+
+<div class="hidden" id="cart_details_<?php echo $this->cart_id; ?>" style="margin-bottom:1em;">
+	<table class="tl_listing">
+		<tr>
+			<td style="vertical-align: top;width:65%; border: 1px dashed gray; padding: 0.5em">
+				<h3><?= $this->trans('ICBE.LBL.cartItems'); ?></h3>
+				<br />
+				<!-- items -->
+				<?php if(empty($this->cart_items)): ?>
+					<div class="tl_message">
+						<p class="tl_error">
+							<?= $this->trans('ICBE.LBL.cartEmpty'); ?>
+						</p>
+					</div>
+				<?php else: ?>
+					<table class="tl_listing">
+						<thead>
+							<tr>
+								<th class="tl_folder_tlist"><?= $this->trans('ICBE.LBL.sku'); ?></th>
+								<th class="tl_folder_tlist"><?= $this->trans('ICBE.LBL.product'); ?></th>
+								<th class="tl_folder_tlist"><?= $this->trans('ICBE.LBL.quantity'); ?></th>
+								<th class="tl_folder_tlist"><?= $this->trans('ICBE.LBL.priceGross'); ?></th>
+								<th class="tl_folder_tlist"><?= $this->trans('ICBE.LBL.priceNetto'); ?></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach($this->cart_items as $cartItem): ?>
+								<tr>
+									<td class="tl_file_list"><?= $cartItem['sku']; ?></td>
+									<td class="tl_file_list"><?= $cartItem['name']; ?></td>
+									<td class="tl_file_list"><?= $cartItem['qty']; ?></td>
+									<td class="tl_file_list"><?= $cartItem['tax_free_price']; ?></td>
+									<td class="tl_file_list"><?= $cartItem['price']; ?></td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				<?php endif; ?>
+			</td>
+			<td style="vertical-align: top; border: 1px dashed gray; padding: 0.5em">
+				<h3><?= $this->trans('ICBE.LBL.checkoutInfo'); ?></h3>
+				<br />
+				<!-- checkout info -->
+				<?php if(empty($this->checkout_info)): ?>
+					<div class="tl_message">
+						<p class="tl_error">
+							<?= $this->trans('ICBE.LBL.checkoutInfoNotAvailable'); ?>
+						</p>
+					</div>
+				<?php else: ?>
+					<?php foreach ($this->checkout_info as $type => $infos): ?>
+                            <strong><?= $infos['headline']; ?></strong>
+                            <br />
+                            <?= $infos['info']; ?>
+                            <br />
+                            <br />
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+	function init(id){
+		let btnShow = document.querySelector('.btn-show[data-id="'+id+'"]');
+		let btnHide = document.querySelector('.btn-hide[data-id="'+id+'"]');
+		let tr = btnShow.parentNode.parentNode.parentNode;
+
+		let divDetails = document.querySelector('div#cart_details_'+id);
+
+		let trDetails = document.createElement('tr');
+		trDetails.setAttribute('class','hidden');
+		trDetails.setAttribute('style','background-color:#f9f9f9;');
+
+		let tdEmpty = document.createElement('td');
+		let tdDetails = document.createElement('td');
+		tdDetails.setAttribute('colspan',"<?= count($GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['fields']) - 1; ?>");
+		tdDetails.setAttribute('class','tl_file_list');
+
+		tdDetails.appendChild(divDetails);
+		trDetails.appendChild(tdEmpty);
+		trDetails.appendChild(tdDetails);
+
+		tr.after(trDetails);
+
+		btnShow.addEventListener('click',function(e){
+			e.preventDefault();
+			
+			btnHide.classList.toggle('hidden');
+			btnShow.classList.toggle('hidden');
+			trDetails.classList.toggle('hidden');
+			divDetails.classList.toggle('hidden');
+
+			return false;
+		});
+		btnHide.addEventListener('click',function(e){
+			e.preventDefault();
+			
+			btnHide.classList.toggle('hidden');
+			btnShow.classList.toggle('hidden');
+			trDetails.classList.toggle('hidden');
+			divDetails.classList.toggle('hidden');
+
+			return false;
+		});
+	}
+	init("<?php echo $this->cart_id; ?>");
+</script>
