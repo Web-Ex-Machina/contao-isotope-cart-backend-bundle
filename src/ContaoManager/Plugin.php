@@ -37,6 +37,7 @@ class Plugin implements BundlePluginInterface
                 ->setLoadAfter([
                     ContaoCoreBundle::class,
                     'isotope',
+                    'isotope_rules', // otherwise our BE menu link gets wrongly placed
                 ])
                 ->setReplace(['isotopecartbackend']),
         ];

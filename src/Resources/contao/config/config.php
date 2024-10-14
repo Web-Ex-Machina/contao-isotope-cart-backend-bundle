@@ -26,3 +26,4 @@ ArrayUtil::arrayInsert(
 
 $GLOBALS['ISO_CART_BE_HOOKS'] = $GLOBALS['ISO_CART_BE_HOOKS'] ?? [];
 $GLOBALS['ISO_CART_BE_HOOKS']['getCartLabel'] = $GLOBALS['ISO_CART_BE_HOOKS']['getCartLabel'] ?? [];
+$GLOBALS['ISO_CART_BE_HOOKS']['calculateCartCurrentStep'] = $GLOBALS['ISO_CART_BE_HOOKS']['calculateCartCurrentStep'] ?? [];
