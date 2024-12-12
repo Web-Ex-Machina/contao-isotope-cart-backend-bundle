@@ -35,7 +35,7 @@ class IsoProductCollectionContainer
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['fields'] = ['id', 'member', 'total', 'cart_current_step', 'cart_last_action', 'cart_actions'];
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['label_callback'] = [self::class, 'getCartLabel'];
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['global_operations'] = [];
-            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'] = [];
+            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'] = array_filter($GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'],function($k){return 'delete' === $k;},ARRAY_FILTER_USE_KEY);
 
             foreach ($GLOBALS['TL_DCA']['tl_iso_product_collection']['fields'] as $field => &$config) {
                 if (true === ($config['filter'] ?? false)) {
