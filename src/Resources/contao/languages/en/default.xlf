@@ -1,0 +1,57 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/isotopecartbackend/languages/en/default.php" source-language="en">
+    <body>
+      <trans-unit id="ICBE.LBL.sku">
+        <source>SKU</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.product">
+        <source>Product</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.quantity">
+        <source>Qty</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.priceGross">
+        <source>Price (gross)</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.priceNetto">
+        <source>Price (netto)</source>
+      </trans-unit>
+      <trans-unit id="ICBE.BTN.showDetails">
+        <source>Show details</source>
+      </trans-unit>
+      <trans-unit id="ICBE.BTN.hideDetails">
+        <source>Hide details</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartItems">
+        <source>Items in cart</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.checkoutInfo">
+        <source>Checkout informations</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartEmpty">
+        <source>Cart is empty</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.checkoutInfoNotAvailable">
+        <source>No checkout informations available</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.websiteSurfing">
+        <source>Website surfing</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.paying">
+        <source>Paying</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.checkoutInfo">
+        <source>Checkout info</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.paymentMethodSelection">
+        <source>Payment method selection</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.shipmentMethodSelection">
+        <source>Shipment method selection</source>
+      </trans-unit>
+      <trans-unit id="ICBE.LBL.cartStep.addressFilling">
+        <source>Address filling</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
