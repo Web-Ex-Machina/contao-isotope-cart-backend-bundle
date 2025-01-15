@@ -84,7 +84,7 @@ class IsoProductCollectionContainer
                     break;
 
                 case 'member':
-                    if (null === $row['member']) {
+                    if (0 === $row['member']) {
                         $args[$i] = '-';
                         break;
                     }
