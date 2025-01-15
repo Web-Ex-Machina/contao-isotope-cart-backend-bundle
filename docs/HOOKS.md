@@ -28,8 +28,8 @@ $row | `array` | The `tl_iso_product_collection` as array
 $label | `string` | ?
 $dc | `\Contao\DataContainer` | The `DataContainer`
 $argsOriginal | `array` | The values originally calculated by Contao
-$objCart | `Isotope\Model\ProductCollection\Cart` | xxx
-$objDraftOrder | `Isotope\Model\ProductCollection\Order|null` | xxx
+$objCart | `Isotope\Model\ProductCollection\Cart` | The `Cart` object
+$objDraftOrder | `Isotope\Model\ProductCollection\Order\|null` | The `DraftOrder` object, if it exists
 $args | `array` | The values calculated by our bundle
 
 **Code**:
@@ -56,13 +56,9 @@ Called after a `tl_iso_product_collection` step has been calculated.
 **Arguments**:
 Name | Type | Description
 --- | --- | ---
-$row | `array` | The `tl_iso_product_collection` as array
-$label | `string` | ?
-$dc | `\Contao\DataContainer` | The `DataContainer`
-$argsOriginal | `array` | The values originally calculated by Contao
-$objCart | `Isotope\Model\ProductCollection\Cart` | xxx
-$objDraftOrder | `Isotope\Model\ProductCollection\Order|null` | xxx
-$args | `array` | The values calculated by our bundle
+$objCart | `Isotope\Model\ProductCollection\Cart` | The `Cart` object
+$objDraftOrder | `Isotope\Model\ProductCollection\Order\|null` | The `DraftOrder` object, if it exists
+$step | `string\|null` | The step calculated by our bundle
 
 **Code**:
 ```php
