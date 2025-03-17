@@ -21,6 +21,7 @@ use Contao\Model;
 use Contao\StringUtil;
 use Contao\System;
 use Isotope\Isotope;
+use Isotope\Model\Config as IsotopeConfig;
 use Isotope\Model\ProductCollection\Cart;
 use Isotope\Model\ProductCollection\Order;
 use IsotopeCartBackendBundle\Classes\CartCurrentStep;
@@ -32,10 +33,10 @@ class IsoProductCollectionContainer
         if ('iso_carts' === $_GET['do']) {
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['sorting']['filter'] = [['type=?', 'cart']];
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['sorting']['fields'] = ['id DESC'];
-            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['fields'] = ['id', 'member', 'total', 'cart_current_step', 'cart_last_action', 'cart_actions'];
+            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['fields'] = ['id', 'member', 'total', 'store_id', 'cart_current_step', 'cart_last_action', 'cart_actions'];
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['label']['label_callback'] = [self::class, 'getCartLabel'];
             $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['global_operations'] = [];
-            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'] = array_filter($GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'],function($k){return 'delete' === $k;},ARRAY_FILTER_USE_KEY);
+            $GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'] = array_filter($GLOBALS['TL_DCA']['tl_iso_product_collection']['list']['operations'], function ($k) {return 'delete' === $k; }, \ARRAY_FILTER_USE_KEY);
 
             foreach ($GLOBALS['TL_DCA']['tl_iso_product_collection']['fields'] as $field => &$config) {
                 if (true === ($config['filter'] ?? false)) {
@@ -108,6 +109,10 @@ class IsoProductCollectionContainer
                     $args[$i] = \array_key_exists($step, $GLOBALS['TL_LANG']['ICBE']['LBL']['cartStep'])
                     ? $GLOBALS['TL_LANG']['ICBE']['LBL']['cartStep'][$step]
                     : $step;
+                    break;
+                case 'store_id':
+                    $isoConfig = IsotopeConfig::findByPk($row['store_id']);
+                    $args[$i] = $isoConfig ? $isoConfig->name : $row['store_id'];
                     break;
                 case 'cart_actions':
                     $objTemplate = new BackendTemplate('be_iso_cart_actions');
