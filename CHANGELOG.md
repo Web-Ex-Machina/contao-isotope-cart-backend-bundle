@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# 1.1.2 - 2025-03-17
+
+- Feat : adding column `store_id` in list
+
 # 1.1.1 - 2025-01-15
 
 - Fix : wrong value used to test if a cart is linked to a member or not (thank you @lukasbableck)
