@@ -15,9 +15,10 @@ Called after values to display a `tl_iso_product_collection` row in BE are calcu
 	0 => 'id',
 	1 => 'member',
 	2 => 'total',
-	3 => 'cart_current_step',
-	4 => 'cart_last_action',
-	5 => 'cart_actions',
+	3 => 'store_id',
+	4 => 'cart_current_step',
+	5 => 'cart_last_action',
+	6 => 'cart_actions',
 ]
 ```
 
